@@ -19,7 +19,7 @@ jobs:
   
       - name: Test import
         run: |
-          typst compile - << 'EOF'
+          typst compile - output.pdf << 'EOF'
           #import "@local/mypkg:0.1.0": add
           #assert(add(1, 2) == 3)
-          EOF output.pdf
+          EOF
