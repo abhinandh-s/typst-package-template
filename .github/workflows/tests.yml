@@ -14,7 +14,17 @@ jobs:
       COMMIT_BACK: "false"
       
     steps:
-      - uses: actions/checkout@v4
-      - uses: typst-community/setup-typst@v4
-      - run: typst compile tests/quotes.typ output.pdf
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v4
+
+      - name: Run unit test assertions
+        run: |
+          typst compile --root . tests/add-test.typ test-out.pdf
+
+      - name: Build example document
+        run: |
+          typst compile --root . examples/sample.typ example-out.pdf
 
