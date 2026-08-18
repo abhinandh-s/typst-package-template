@@ -22,4 +22,4 @@ jobs:
           typst compile - << 'EOF'
           #import "@local/mypkg:0.1.0": add
           #assert(add(1, 2) == 3)
-          EOF
+          EOF output.pdf
