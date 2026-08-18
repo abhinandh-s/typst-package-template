@@ -16,5 +16,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: typst-community/setup-typst@v4
-      - run: typst compile tests/quote.typ output.pdf
+      - run: typst compile tests/quotes.typ output.pdf
 
