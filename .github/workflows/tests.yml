@@ -1,0 +1,20 @@
+name: Tests
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+  workflow_dispatch:
+
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      COMMIT_BACK: "false"
+      
+    steps:
+      - uses: actions/checkout@v4
+      - uses: typst-community/setup-typst@v4
+      - run: typst compile tests/quote.typ output.pdf
+
